@@ -8,6 +8,10 @@ export const metadata: Metadata = {
 	title: "Anthony Bologna | Full Stack Engineer",
 	description:
 		"Portfolio of Anthony Bologna — Full Stack Engineer passionate about user and developer experience.",
+	icons: {
+		icon: "/face.png",
+		apple: "/face.png",
+	},
 };
 
 export default function RootLayout({
