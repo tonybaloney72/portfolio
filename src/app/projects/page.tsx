@@ -31,25 +31,25 @@ const ProjectCard = ({
 			transition={{ duration: 0.1 }}
 			onClick={onClick}>
 			{isImageLeft && (
-				<div className="w-full md:w-1/3 h-56 md:h-auto md:min-h-[220px] overflow-hidden rounded-sm">
+				<div className='w-full md:w-1/3 h-56 md:h-auto md:min-h-[220px] overflow-hidden rounded-sm'>
 					<img
 						src={image}
-						alt=""
-						className="w-full h-full object-cover object-center"
+						alt=''
+						className='w-full h-full object-cover object-center'
 					/>
 				</div>
 			)}
 			<div
 				className={`flex flex-col gap-4 w-full md:w-2/3 py-0 md:py-1 ${textPadding}`}>
-				<p className="text-2xl text-primary text-center">{title}</p>
-				<p className="text-lg text-secondary">{description}</p>
+				<p className='text-2xl text-primary text-center'>{title}</p>
+				<p className='text-lg text-secondary'>{description}</p>
 			</div>
 			{!isImageLeft && (
-				<div className="w-full md:w-1/3 h-56 md:h-auto md:min-h-[220px] overflow-hidden rounded-sm">
+				<div className='w-full md:w-1/3 h-56 md:h-auto md:min-h-[220px] overflow-hidden rounded-sm'>
 					<img
 						src={image}
-						alt=""
-						className="w-full h-full object-cover object-center"
+						alt=''
+						className='w-full h-full object-cover object-center'
 					/>
 				</div>
 			)}
@@ -61,9 +61,9 @@ const SuperUltraTitle = () => (
 	<>
 		Super Ultra Coin Collector Turbo:
 		<br />
-		<span className="text-2xl">Mega Extreme Edition</span>
+		<span className='text-2xl'>Mega Extreme Edition</span>
 		<br />
-		<span className="text-base text-accent">Javascript, HTML, CSS</span>
+		<span className='text-base text-accent'>Javascript, HTML, CSS</span>
 	</>
 );
 
@@ -75,7 +75,7 @@ const TodoTitle = () => (
 	<>
 		To Do List
 		<br />
-		<span className="text-base text-accent">
+		<span className='text-base text-accent'>
 			React, TailwindCSS, TypeScript
 		</span>
 	</>
@@ -90,7 +90,7 @@ const PotLuckApp = () => (
 	<>
 		Pot Luck App
 		<br />
-		<span className="text-base text-accent">
+		<span className='text-base text-accent'>
 			Vite, React 19, TypeScript, Redux Toolkit, TailwindCSS v4, React Router
 			v7, Supabase (Auth, Storage, Database)
 		</span>
@@ -103,7 +103,7 @@ const WordleTitle = () => (
 	<>
 		Wordle Clone
 		<br />
-		<span className="text-base text-accent">
+		<span className='text-base text-accent'>
 			React, TypeScript, TailwindCSS
 		</span>
 	</>
@@ -113,9 +113,9 @@ const wordleDescription = `A Wordle-style guessing game with a random five-lette
 
 const ExerciseTitle = () => (
 	<>
-		Exercise App
+		MyExercise
 		<br />
-		<span className="text-base text-accent">
+		<span className='text-base text-accent'>
 			Next.js, TypeScript, Zustand, TailwindCSS
 		</span>
 	</>
@@ -143,45 +143,45 @@ export default function ProjectsPage() {
 	};
 
 	const handleExercise = () => {
-		window.open("https://my-exercise-tracking-app.vercel.app/", "blank");
+		window.open("https://myexercise.dev", "blank");
 	};
 
 	return (
-		<div className="flex flex-col gap-10 items-center">
+		<div className='flex flex-col gap-10 items-center'>
 			<ProjectCard
 				title={<ExerciseTitle />}
 				description={exerciseDescription}
-				image="/assets/exercise.png"
+				image='/assets/exercise.png'
 				onClick={handleExercise}
-				imagePosition="right"
+				imagePosition='right'
 			/>
 			<ProjectCard
 				title={<PotLuckApp />}
 				description={potLuckAppDescription}
-				image="/assets/PotLuck.png"
+				image='/assets/PotLuck.png'
 				onClick={handlePotLuck}
-				imagePosition="left"
+				imagePosition='left'
 			/>
 			<ProjectCard
 				title={<WordleTitle />}
 				description={wordleDescription}
-				image="/assets/wordle.png"
+				image='/assets/wordle.png'
 				onClick={handleWordle}
-				imagePosition="right"
+				imagePosition='right'
 			/>
 			<ProjectCard
 				title={<SuperUltraTitle />}
 				description={superUltraDescription}
-				image="/assets/SUCCT.png"
+				image='/assets/SUCCT.png'
 				onClick={handleSUCCTMEE}
-				imagePosition="left"
+				imagePosition='left'
 			/>
 			<ProjectCard
 				title={<TodoTitle />}
 				description={todoDescription}
-				image="/assets/todo.png"
+				image='/assets/todo.png'
 				onClick={handleTodo}
-				imagePosition="right"
+				imagePosition='right'
 			/>
 		</div>
 	);
