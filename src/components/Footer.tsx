@@ -1,17 +1,37 @@
-"use client";
+import {
+	FaCalendarAlt,
+	FaFileDownload,
+	FaGithub,
+	FaLinkedin,
+} from "react-icons/fa";
+import { site } from "@/data/site";
+import type { IconType } from "react-icons";
+
+const links: { href: string; label: string; icon: IconType }[] = [
+	{ href: site.linkedin, label: "LinkedIn", icon: FaLinkedin },
+	{ href: site.github, label: "GitHub", icon: FaGithub },
+	{ href: site.resume, label: "Resume", icon: FaFileDownload },
+	{ href: site.calendar, label: "Book a call", icon: FaCalendarAlt },
+];
 
 export const Footer = () => {
-	const handleClick = () => {
-		window.open("https://calendar.app.google/oMTaVdUCsHsF7CXc6", "_blank");
-	};
-
 	return (
-		<div
-			onClick={handleClick}
-			className="text-sm md:text-lg text-primary h-12 md:h-24 p-2 md:p-4 flex w-full justify-center items-center">
-			<p className="hover:cursor-pointer hover:text-accent hover:transition duration-300 text-center">
-				Click here to schedule a meeting with me!
-			</p>
-		</div>
+		<footer className="border-t border-border">
+			<div className="mx-auto flex max-w-5xl justify-center gap-8 px-6 py-6 text-sm text-secondary">
+				{links.map(({ href, label, icon: Icon }) => (
+					<a
+						key={label}
+						href={href}
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label={label}
+						title={label}
+						className="flex items-center gap-2 hover:text-accent">
+						<Icon className="text-xl" />
+						<span className="hidden md:inline">{label}</span>
+					</a>
+				))}
+			</div>
+		</footer>
 	);
 };

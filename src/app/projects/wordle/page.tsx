@@ -126,7 +126,7 @@ export default function WordlePage() {
 		<div className="w-full flex flex-col items-center gap-6">
 			<div className="flex items-center w-full relative max-w-[320px] sm:max-w-[480px] md:max-w-[640px] lg:max-w-[800px]">
 				<button
-					onClick={() => router.push("/projects")}
+					onClick={() => router.push("/#work")}
 					className="flex gap-2 text-sm sm:text-base md:text-lg bg-secondary text-primary items-center px-2 py-1 rounded-lg hover:opacity-80 transition-opacity hover:cursor-pointer">
 					<FaArrowLeft /> Back
 				</button>

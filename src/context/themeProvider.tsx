@@ -3,21 +3,13 @@
 import { useState, createContext, useContext, useEffect } from "react";
 import type { ReactNode } from "react";
 
-export type Theme = "light" | "dark" | "blue" | "green" | "purple" | "orange";
+export type Theme = "light" | "dark";
 
-export const THEMES: Theme[] = [
-	"light",
-	"dark",
-	"blue",
-	"green",
-	"purple",
-	"orange",
-];
+const THEMES: Theme[] = ["light", "dark"];
 
 interface ThemeContextType {
 	theme: Theme;
 	setTheme: (theme: Theme) => void;
-	themes: Theme[];
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -39,9 +31,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {
-		const savedTheme = localStorage.getItem("theme") as Theme;
-		if (savedTheme && THEMES.includes(savedTheme)) {
-			setThemeState(savedTheme);
+		const savedTheme = localStorage.getItem("theme");
+		if (savedTheme && THEMES.includes(savedTheme as Theme)) {
+			setThemeState(savedTheme as Theme);
 		}
 		setMounted(true);
 	}, []);
@@ -58,7 +50,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 	}, [theme, mounted]);
 
 	return (
-		<ThemeContext.Provider value={{ theme, setTheme, themes: THEMES }}>
+		<ThemeContext.Provider value={{ theme, setTheme }}>
 			{children}
 		</ThemeContext.Provider>
 	);

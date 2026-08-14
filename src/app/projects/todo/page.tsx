@@ -96,7 +96,7 @@ export default function ToDoListPage() {
 	const { theme } = useTheme();
 
 	const handleBack = (): void => {
-		router.push("/projects");
+		router.push("/#work");
 	};
 
 	const toggleSortOrder = (): void => {

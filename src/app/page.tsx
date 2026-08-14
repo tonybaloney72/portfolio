@@ -1,5 +1,13 @@
-import { AboutPage } from "@/components/AboutPage";
+import { About } from "@/components/About";
+import { Hero } from "@/components/Hero";
+import { Work } from "@/components/Work";
 
 export default function Home() {
-	return <AboutPage />;
+	return (
+		<>
+			<Hero />
+			<Work />
+			<About />
+		</>
+	);
 }

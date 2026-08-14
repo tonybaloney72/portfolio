@@ -7,11 +7,7 @@ import "./globals.css";
 export const metadata: Metadata = {
 	title: "Anthony Bologna | Full Stack Engineer",
 	description:
-		"Portfolio of Anthony Bologna — Full Stack Engineer passionate about user and developer experience.",
-	icons: {
-		icon: "/face.png",
-		apple: "/face.png",
-	},
+		"Portfolio of Anthony Bologna - Full Stack Engineer. Selected work includes Potluck and MyExercise.",
 };
 
 export default function RootLayout({
@@ -20,12 +16,16 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
-			<body className="min-h-screen antialiased">
+		<html
+			lang='en'
+			data-theme='dark'
+			className='scroll-smooth'
+			suppressHydrationWarning>
+			<body className='min-h-screen antialiased'>
 				<ThemeProvider>
-					<div className="bg-primary-gradient min-h-screen flex flex-col">
+					<div className='flex min-h-screen flex-col bg-primary'>
 						<NavBar />
-						<div className="flex-1">{children}</div>
+						<main className='flex-1'>{children}</main>
 						<Footer />
 					</div>
 				</ThemeProvider>
